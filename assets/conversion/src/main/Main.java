@@ -1,14 +1,15 @@
 package main;
 
+import api.Connection;
+
 import java.io.Console;
 import java.lang.ref.Cleaner;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void showQuantity() {
-        System.out.println("How much? ");
-
+    public static void conectar(String one, String two) {
+        Connection connection = new Connection(one, two);
     }
 
     public static void main(String[] args) {
@@ -21,9 +22,9 @@ public class Main {
                     [1] Dollar -> Argentine currency
                     [2] Dollar -> Colombian currency
                     [3] Dollar -> Real
-                    [4] Real -> Dollar
-                    [5] Argentine currency -> Dollar
-                    [6] Colombian currency -> Dollar
+                    [4] EUR -> Dollar
+                    [5] EUR -> Argentine currency
+                    [6] EUR -> BRL
                     [7] Exit
                     """);
 
@@ -35,22 +36,22 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                    showQuantity();
+                    conectar("USD", "ARS");
                     break;
                 case 2:
-                    showQuantity();
+                    conectar("USD", "COP");
                     break;
                 case 3:
-                    showQuantity();
+                    conectar("USD", "BRL");
                     break;
                 case 4:
-                    showQuantity();
+                    conectar("EUR", "USD");
                     break;
                 case 5:
-                    showQuantity();
+                    conectar("EUR", "ARS ");
                     break;
                 case 6:
-                    showQuantity();
+                    conectar("EUR", "BRL");
                     break;
                 default:
                     System.out.println("Invalid option");
