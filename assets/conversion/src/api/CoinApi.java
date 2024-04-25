@@ -1,4 +1,4 @@
 package api;
 
-public record CoinApi(float conversion_rate) {
+public record CoinApi(double conversion_rate) {
 }
