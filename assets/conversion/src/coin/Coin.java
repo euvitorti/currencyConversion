@@ -3,18 +3,20 @@ package coin;
 import api.CoinApi;
 
 public class Coin {
-    private float result;
-
-    public Coin(CoinApi coinApi) {
-        this.result = coinApi.conversion_rate();
-    }
+    private double targetValue;
+    private double valueConverted;
 
     public void info() {
-        System.out.printf("Converted value: %f.1.\n", result);
+        System.out.printf("Converted value: %.2f.\n", this.valueConverted);
     }
 
-    @Override
-    public String toString() {
-        return "Coin: " + this.result;
+    public void coin(CoinApi coinApi, double baseValue) {
+        this.targetValue = coinApi.conversion_rate();
+        calculator(baseValue);
+    }
+
+    public void calculator(double base) {
+        this.valueConverted = base * this.targetValue;
+        info();
     }
 }
