@@ -1,8 +1,6 @@
 package main;
 
 import api.Connection;
-
-import java.util.IllegalFormatException;
 import java.util.Scanner;
 
 public class Main {
@@ -21,19 +19,18 @@ public class Main {
                         """);
     }
 
-    public static void connect(String one, String two) {
+    public static void connect(String baseValue, String targetValue) {
         try {
             Scanner scanner = new Scanner(System.in);
 
             System.out.println("How much? ");
-            double baseValue = scanner.nextDouble();
+            double value = scanner.nextDouble();
 
-            Connection connection = new Connection(one, two, baseValue);
+            Connection connection = new Connection(baseValue, targetValue, value);
         } catch (Exception e) {
             System.out.println("Try again.");
             System.out.println("Only numbers!");
         }
-
     }
 
     public static void main(String[] args) {
@@ -82,6 +79,5 @@ public class Main {
                     break;
             }
         }
-
     }
 }

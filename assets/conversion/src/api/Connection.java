@@ -13,7 +13,9 @@ public class Connection {
 
     public Connection(String baseValue, String targetValue, double value) {
 
-        final String key = "9c669a74faaada81ba36788e";
+        // Don't forget
+        final String key = "YourKey";
+
         // Setting URL
         URI urlConnection = URI.create("https://v6.exchangerate-api.com/v6/" + key + "/pair/" + baseValue + "/" + targetValue);
 
@@ -40,6 +42,5 @@ public class Connection {
             System.out.println(e.getMessage());
             throw new RuntimeException();
         }
-
     }
 }
